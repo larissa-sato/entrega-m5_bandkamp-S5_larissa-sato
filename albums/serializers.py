@@ -6,8 +6,7 @@ from .models import Album
 class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
-        fields = ['id', 'name', 'year']
-        read_only_fields = ['user_id']
+        fields = ['id','user_id', 'name', 'year']
 
 
     def create(self, validated_data):

@@ -45,6 +45,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    'drf_spectacular',
 ]
 
 MY_APPS = [
@@ -130,7 +131,17 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Projeto Bandkamp - M5",
+    "DESCRIPTION": "API criada para gerenciamento de serviços musicais. Cadastro de músicas e álbuns. Cadastro, edição e deleção de usuários",
+    "VERSION": "1",
+    "SERVE_INCLUDE_SCHEMA": True
+}
+
+
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
 }
